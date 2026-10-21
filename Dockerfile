@@ -1,13 +1,13 @@
 FROM python:3.5-slim
 
-WORKDIR /app
+WORKDIR /src
 
-COPY app/requirements.txt .
+COPY src/requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY app/ .
+COPY src/ .
 
 EXPOSE 5000
 
-CMD ["python", "app/main.py"]
+CMD ["python", "src/main.py"]
